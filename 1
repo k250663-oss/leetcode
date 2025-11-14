@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void runningSum(int nums[], int n, int result[]) {
+    result[0] = nums[0];
+    for (int i = 1; i < n; i++) {
+        result[i] = result[i - 1] + nums[i];
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    int nums[n];
+    printf("Enter the elements:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &nums[i]);
+    }
+
+    int result[n];
+    runningSum(nums, n, result);
+
+    printf("Running sum:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", result[i]);
+    }
+
+    return 0;
+}
